@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
-public class SimpleProceduralMesh : MonoBehaviour
+public class EightVertices : MonoBehaviour
 {
 
 	private void OnEnable()
