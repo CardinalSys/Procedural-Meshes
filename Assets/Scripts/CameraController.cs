@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			if (Physics.Raycast(ray, out hit))
 			{
-				hit.collider.GetComponent<TwentyFourVertices>().RemoveVertice(hit.point);
+	
 			}
 		}
 	}

@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.ConstrainedExecution;
 using UnityEngine;
 
+[RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class TwentyFourVertices : MonoBehaviour
 {
 	public List<Vector3> vertices = new List<Vector3>
@@ -42,15 +43,7 @@ public class TwentyFourVertices : MonoBehaviour
 
 		};
 
-	public List<Vector2> uv = new List<Vector2>
-		{
-			Vector2.zero, Vector2.right, Vector2.up, Vector2.one,
-			Vector2.zero, Vector2.right, Vector2.up, Vector2.one,
-			Vector2.zero, Vector2.right, Vector2.up, Vector2.one,
-			Vector2.zero, Vector2.right, Vector2.up, Vector2.one,
-			Vector2.zero, Vector2.right, Vector2.up, Vector2.one,
-			Vector2.zero, Vector2.right, Vector2.up, Vector2.one,
-		};
+
 
 	public List<Vector4> tangents = new List<Vector4>
 		{
@@ -130,7 +123,52 @@ public class TwentyFourVertices : MonoBehaviour
 
 		mesh.normals = normals.ToArray();
 
-		mesh.uv = uv.ToArray();
+		mesh.uv = new Vector2[]{
+			//Front
+			new Vector2(0.0f, 0.0f),
+			new Vector2(0.333f, 0.0f),
+			new Vector2(0.0f, 0.333f),
+			new Vector2(0.333f, 0.333f),
+
+			//Right
+			new Vector2(0.667f, 0.334f),
+			new Vector2(1.0f, 0.334f),
+			new Vector2(0.667f, 0.666f),
+			new Vector2(1.0f, 0.666f),
+			
+
+			// Back
+			new Vector2(0.667f, 0.0f),
+			new Vector2(1.0f, 0.0f),
+			new Vector2(0.667f, 0.333f),
+			new Vector2(1.0f, 0.333f),
+
+			// Left
+			new Vector2(0.334f, 0.334f),
+			new Vector2(0.666f, 0.334f),
+			new Vector2(0.334f, 0.666f),
+			new Vector2(0.666f, 0.666f),
+
+			// Top
+			new Vector2(0.334f, 0.0f),
+			new Vector2(0.666f, 0.0f),
+			new Vector2(0.334f, 0.333f),
+			new Vector2(0.666f, 0.333f),
+
+
+			// Bottom
+			new Vector2(0.0f, 0.666f),
+			new Vector2(0.333f, 0.666f),
+			new Vector2(0.0f, 0.334f),
+			new Vector2(0.333f, 0.334f),
+			
+
+			
+
+
+
+
+		};
 
 		mesh.tangents = tangents.ToArray();
 
